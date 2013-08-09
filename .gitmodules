@@ -1,0 +1,3 @@
+[submodule "bookify-lib"]
+	path = bookify-lib
+	url = git@github.com:SCdF/bookify.git

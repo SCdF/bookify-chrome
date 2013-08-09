@@ -1,11 +1,11 @@
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.state == "loading") {
-      chrome.browserAction.setIcon({path: "icon_48-LOADING.png"});
+      chrome.browserAction.setIcon({path: "images/icon_48-LOADING.png"});
     } else if (request.state == "loaded") {
-      chrome.browserAction.setIcon({path: "icon_48.png"});
+      chrome.browserAction.setIcon({path: "images/icon_48.png"});
     } else if (request.state == "error") {
-      chrome.browserAction.setIcon({path: "icon_48-ERROR.png"});
+      chrome.browserAction.setIcon({path: "images/icon_48-ERROR.png"});
     }
 
     sendResponse();
