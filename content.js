@@ -68,7 +68,7 @@ window.bookify_chrome = (function() {
       bookify.controller.updateProgressbar($("#progress"), article, pointer.nextPageHead);
     });
     Mousetrap.bind("d", function() {
-      settings.debug = !settings.debug;
+      bookify.settings.debug = !bookify.settings.debug;
       pointer = bookify.controller.renderCurrentPage(pointer, surface);
       bookify.controller.updateProgressbar($("#progress"), article, pointer.nextPageHead);
     });
