@@ -84,7 +84,7 @@ window.bookify_chrome = (function() {
 
   function loadPageAttempt() {
     bookify.readability.getContent(document.URL,
-      function(results) {
+      success: function(results) {
         chrome.runtime.sendMessage({state: "loaded"}, function() {
           surface = nukePageFromOrbit();
           initEvents();
@@ -103,7 +103,7 @@ window.bookify_chrome = (function() {
           bookify.controller.updateProgressbar($("#progress"), article, pointer.nextPageHead);
         });
       },
-      function(jqXHR, textStatus, errorThrown) {
+      error: function(jqXHR, textStatus, errorThrown) {
         chrome.runtime.sendMessage({state: "error", textStatus: textStatus, errorThrown: errorThrown});
 
         console.log("Something went wrong, error below the line!")
